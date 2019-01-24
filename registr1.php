@@ -7,9 +7,10 @@
 
 </head>
 <body>
+<?php
 ob_start();
-<?php require_once ('config.php');?>
-
+require_once ('config.php');
+?>
 <header>
     <div id="LogoImg">
         <a href="/" title="Перейти на главную"> Ψ</a>
@@ -33,10 +34,6 @@ ob_start();
         </form>
     </fieldset>
 </div>
-
-
-
-
 
     <footer>
         <?php

@@ -11,7 +11,6 @@
 ob_start();
 require_once ('config.php');
 ?>
-
 <header>
     <div id="LogoImg">
         <a href="/" title="Перейти на главную"> Ψ</a>
@@ -86,11 +85,9 @@ if (!empty($_POST)) {
                                                   VALUES ('$fff','$rez')");
         }
 
-
     }else {echo 'Заповніть всі поля';}
 
 }
-
 
 
 ?><!-- Скрипт формы test1.php-->

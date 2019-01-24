@@ -171,8 +171,6 @@ require_once ('config.php');
             $fff = mysqli_insert_id($link);
             setcookie("Cookie",$fff);
         }
-
-
         ?>
 
 

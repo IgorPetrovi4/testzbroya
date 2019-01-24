@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Психологические тесты</title>
     <link href="css/style.css" rel="stylesheet">
-
 </head>
 <body>
 <?php
@@ -61,11 +60,7 @@ require_once ('config.php');
     </div><!--I Инструкция-->
 
     <div id="form">
-        <?php
 
-
-
-        ?>
     </div><!--Отправить-->
 
 </div>
@@ -73,7 +68,6 @@ require_once ('config.php');
 <footer>
     <?php
     echo $date->format("Y-m-d H:i:s") . PHP_EOL;
-
     ?>
 
 </footer>

@@ -78,21 +78,12 @@ require_once ('config.php');
                                                   VALUES ('$fff','$rezCah')");
     }
 
-
-
-
-
-
 ?> <!--Скрипт формы test11.php-->
 <footer>
     <?php
     echo $date->format("Y-m-d H:i:s") . PHP_EOL;
     ?>
-
 </footer>
-
-
-
 </body>
 </html>
 

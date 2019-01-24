@@ -7,8 +7,10 @@
 
 </head>
 <body>
+<?php
 ob_start();
-<?php require_once ('config.php');?>
+require_once ('config.php');
+?>
 <header>
     <div id="LogoImg">
         <a href="/" title="Перейти на главную"> Ψ</a>
@@ -52,8 +54,6 @@ echo $date->format("Y-m-d H:i:s") . PHP_EOL;
 ?>
 
 </footer>
-
-
 
 </body>
 </html>
