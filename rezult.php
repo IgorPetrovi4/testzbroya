@@ -22,7 +22,10 @@ require_once ('config.php');
 </header>
 
 <div id="TestMenu">
+
+
     <div id="Instruct">
+
         <?php
 
             if (!empty($_POST['t1'] && !empty($_POST['text']))){
@@ -38,29 +41,30 @@ require_once ('config.php');
         $result = mysqli_query($link, "SELECT * FROM register WHERE id=$fff");
         $row = mysqli_fetch_array($result);
         for ($i = 1; $i <= 6; $i++)
-        {echo "$row[$i]<br /> ";
+        {echo $reg="$row[$i]<br /> ";
         }
         $result = mysqli_query($link, "SELECT * FROM dbtest1 WHERE id=$fff");
         $row = mysqli_fetch_array($result);
         for ($i = 1; $i <= 1; $i++)
-        {echo "$row[$i]<br /> ";
+        {echo $db1="$row[$i]<br /> ";
         }
         $result = mysqli_query($link, "SELECT * FROM dbtest2 WHERE id=$fff");
         $row = mysqli_fetch_array($result);
         for ($i = 1; $i <= 1; $i++)
-        {echo "$row[$i]<br /> ";
+        {echo $db2="$row[$i]<br /> ";
         }
         $result = mysqli_query($link, "SELECT * FROM dbtest3 WHERE id=$fff");
         $row = mysqli_fetch_array($result);
         for ($i = 1; $i <= 2; $i++)
-        {echo "$row[$i]<br /> ";
+        {echo $db3="$row[$i]<br /> ";
         }
         ?>
 
     </div><!--I Инструкция-->
 
     <div id="form">
-
+        <form action="emailrezult.php" method="post">
+            <input type="submit" value="Відправити психологу">
     </div><!--Отправить-->
 
 </div>
