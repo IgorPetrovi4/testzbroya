@@ -36,22 +36,22 @@ require_once ('config.php');
 
             }
 
-        $result = mysqli_query($link, "SELECT * FROM register");
+        $result = mysqli_query($link, "SELECT * FROM register WHERE id=$fff");
         $row = mysqli_fetch_array($result);
         for ($i = 1; $i <= 6; $i++)
         {echo "$row[$i]<br /> ";
         }
-        $result = mysqli_query($link, "SELECT * FROM dbtest1");
+        $result = mysqli_query($link, "SELECT * FROM dbtest1 WHERE id=$fff");
         $row = mysqli_fetch_array($result);
         for ($i = 1; $i <= 1; $i++)
         {echo "$row[$i]<br /> ";
         }
-        $result = mysqli_query($link, "SELECT * FROM dbtest2");
+        $result = mysqli_query($link, "SELECT * FROM dbtest2 WHERE id=$fff");
         $row = mysqli_fetch_array($result);
         for ($i = 1; $i <= 1; $i++)
         {echo "$row[$i]<br /> ";
         }
-        $result = mysqli_query($link, "SELECT * FROM dbtest3");
+        $result = mysqli_query($link, "SELECT * FROM dbtest3 WHERE id=$fff");
         $row = mysqli_fetch_array($result);
         for ($i = 1; $i <= 2; $i++)
         {echo "$row[$i]<br /> ";
