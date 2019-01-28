@@ -10,6 +10,7 @@
 <?php
 ob_start();
 require_once ('config.php');
+
 ?>
 <header>
     <div id="LogoImg">
@@ -45,6 +46,7 @@ require_once ('config.php');
 </div><!--Шкала настроения-->
 
 <?php
+
 if (!empty($_POST)) {
     if (!empty($_POST['a1']) && !empty($_POST['a2']) && !empty($_POST['a3']) && !empty($_POST['a4']) && !empty($_POST['a5'])
         && !empty($_POST['a6']) && !empty($_POST['a7']) && !empty($_POST['a8']) && !empty($_POST['a9']) && !empty($_POST['a10'])
@@ -63,14 +65,14 @@ if (!empty($_POST)) {
 
         if ($RT <= $a){
             $rez= "Реактивна тривожність НИЗЬКА";
-            $fff=$_COOKIE["Cookie"];
+
             $sql = mysqli_query($link,"
                                                   INSERT INTO dbtest1 (id,rezulttest1) 
                                                   VALUES ('$fff','$rez')");
         }
         elseif ($RT >= $b && $RT <= $c){
             $rez= "Реактивна тривожність ПОМІРНА";
-            $fff=$_COOKIE["Cookie"];
+
             $fg=mysqli_insert_id($link );
             $sql = mysqli_query($link,"
                                                   INSERT INTO dbtest1 (id,rezulttest1) 
@@ -78,7 +80,7 @@ if (!empty($_POST)) {
         }
         elseif ($RT >= $d) {
             $rez= "Реактивна тривожність ВИСОКА";
-            $fff=$_COOKIE["Cookie"];
+
             $fg=mysqli_insert_id($link );
             $sql = mysqli_query($link,"
                                                   INSERT INTO dbtest1 (id,rezulttest1) 

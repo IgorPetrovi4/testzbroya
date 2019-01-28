@@ -9,6 +9,7 @@
 <?php
 ob_start();
 require_once ('config.php');
+
 ?>
 
 <header>
@@ -31,7 +32,7 @@ require_once ('config.php');
             if (!empty($_POST['t1'] && !empty($_POST['text']))){
                 $consent = $_POST['t1'];
                 $textField = $_POST['text'];
-                $fff=$_COOKIE["Cookie"];
+
                 $sql = mysqli_query($link,"
                                                   INSERT INTO dbtest3(id,rezulttest3,rezulttest4) 
                                                   VALUES ('$fff',' $consent',' $textField')");

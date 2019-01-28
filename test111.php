@@ -10,6 +10,7 @@
 <?php
 ob_start();
 require_once ('config.php');
+
 ?>
 
 <header>
@@ -39,8 +40,9 @@ require_once ('config.php');
 
            <form action="rezult.php" method="post">
 
-                   <input type="radio" name="t1" value="да" required > да <br>
-                   <input type="radio" name="t1" value="нет" required > нет <br>
+
+                   <input type="radio" name="t1" value="ТАК ГОТОВИЙ" required > Так <br>
+                   <input type="radio" name="t1" value="НІ НЕ ГОТОВИЙ" required >  Ні <br>
 
 
                    <p><b>Введите ваш отзыв:</b></p>
@@ -58,21 +60,21 @@ require_once ('config.php');
 
     if ($CAH <=20){
         $rezCah= "Індекс САН НИЗЬКИЙ";
-        $fff=$_COOKIE["Cookie"];
+
         $sql = mysqli_query($link,"
                                                   INSERT INTO dbtest2(id,rezulttest2) 
                                                   VALUES ('$fff','$rezCah')");
     }
     elseif ($CAH >= 21 && $CAH <=60){
         $rezCah= "Індекс САН СЕРЕДНІЙ";
-        $fff=$_COOKIE["Cookie"];
+
        $sql = mysqli_query($link,"
                                                   INSERT INTO dbtest2 (id,rezulttest2) 
                                                   VALUES ('$fff','$rezCah')");
     }
     elseif ($CAH >= 61) {
         $rezCah= "Індекс САН  ВИСОКИЙ";
-        $fff=$_COOKIE["Cookie"];
+
         $sql = mysqli_query($link,"
                                                   INSERT INTO dbtest2 (id,rezulttest2) 
                                                   VALUES ('$fff','$rezCah')");
