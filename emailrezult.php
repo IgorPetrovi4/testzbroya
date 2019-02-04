@@ -38,30 +38,28 @@ $image->annotateImage($draw, 100, 200, 0, $row4[2]);
 $image->annotateImage($draw, 100, 240, 0, 'До служби зі зброєю, РЕКОМЕНДОВАНО:'." ".$row5);
 $image->annotateImage($draw, 100, 260, 0, 'Час проходження тесту:'." ".$date->format("d-m-Y H:i:s"));
 $image->setImageFormat('jpg');
-header('Content-Disposition: attachment; filename="imgRezultat.jpg"');
+header("Content-Disposition: attachment; filename=$row1[1].jpg");
 echo $image;
 
 
-
-/*$subject="Привет это письмо темы 1";
-$email="ip1204@ukr.net";
-mail($email, $subject, $message,
-    "From: webmaster@petrov.net\r\n"
-    ."Reply-To: webmaster@petrov.net\r\n"
-    ."X-Mailer: PHP/" . phpversion());*/
-// Create the Transport
 $transport = (new Swift_SmtpTransport('smtp.ukr.net', 465, 'ssl'))
     ->setUsername('ip1204@ukr.net')
-    ->setPassword('v4A16200826')
-;
-// Create the Mailer using your created Transport
+    ->setPassword('v4A16200826');
 $mailer = new Swift_Mailer($transport);
 
-// Create a message
-$message = (new Swift_Message('Wonderful Subject'))
-    ->setFrom(['ip1204@ukr.net' => 'John Doe'])
-    ->setTo(['ip1204@ukr.net', 'petrov120482@gmail.com' => 'A name'])
-    ->setBody('Here is the message itself')
-;
-// Send the message
+$attachment = new Swift_Attachment($image, $row1[1].'.jpg', 'application/jpg');
+
+$message = (new Swift_Message($row1[1]." ".'Результат тестування'))
+    ->setFrom(['ip1204@ukr.net' => 'Тест зі Зброєю'])
+    ->setTo([$row1[5], $row1[6] => 'Тестування військовослужбовця'])
+    ->setBody('Раздрукуйте вкладені результати')
+    ->attach($attachment);
+
 $result = $mailer->send($message);
+
+mysqli_query($link, "DELETE FROM register WHERE id=$fff");
+mysqli_query($link, "DELETE FROM dbtest1 WHERE id=$fff");
+mysqli_query($link, "DELETE FROM dbtest2 WHERE id=$fff");
+mysqli_query($link, "DELETE FROM dbtest3 WHERE id=$fff");
+
+
