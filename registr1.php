@@ -10,6 +10,7 @@
 <?php
 ob_start();
 require_once ('config.php');
+require_once 'vendor/autoload.php';
 ?>
 <header>
     <div id="LogoImg">
@@ -33,6 +34,7 @@ require_once ('config.php');
             <input type="submit" name="">
         </form>
     </fieldset>
+
 </div>
 
     <footer>
